@@ -131,6 +131,6 @@ form.addEventListener('submit', (e) => {
 })
 
 function playSound() {
-    const audio = new Audio('../../sounds/ding-sound-effect_2.mp3');
+    const audio = new Audio('sounds/ding-sound-effect_2.mp3');
 audio.play();
 }
