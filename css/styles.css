@@ -38,7 +38,7 @@ body {
 
 .bgimage-container {
    height: 200px;
-    background-image: url(/images/bg-main-mobile.png);
+    background-image: url(../images/bg-main-mobile.png);
     background-repeat: no-repeat;
     background-size: 100%, 100%;
     z-index: -1;
@@ -54,7 +54,7 @@ body {
 }
 
 .front-card {
-    background-image: url('/images/bg-card-front.png');
+    background-image: url('../images/bg-card-front.png');
     background-repeat: no-repeat;
     background-size: cover;
     width: 275px;
@@ -121,7 +121,7 @@ body {
 }
 
 .back-card {
-    background-image: url('/images/bg-card-back.png');
+    background-image: url('../images/bg-card-back.png');
     background-repeat: no-repeat;
     background-size: cover;
     width: 275px;
@@ -278,7 +278,7 @@ button {
     }
     
     .bgimage-container {
-        background-image: url(/images/bg-main-desktop.png);
+        background-image: url(../images/bg-main-desktop.png);
         background-repeat: no-repeat;
         background-size: cover;
         height: 100vh;

@@ -26,10 +26,12 @@ cardNumberInput.addEventListener('input', (e) => {
     if(cardNumberInput.value === '') {
         cardNumberInput.style.outlineColor = 'red'
         cardDanger.textContent = "Cannot be empty"
-    } else if(cardNumberInput.value.length < '19') {
+    } 
+    else if(cardNumberInput.value.length < '19') {
         cardNumberInput.style.outlineColor = 'red'
         cardDanger.textContent = "Must be a valid card"
-    } else if(!cardNumberInput.value.includes(' ')) {
+    }
+     else if(!cardNumberInput.value.includes(' ')) {
         cardNumberInput.style.outlineColor = 'red'
         cardDanger.textContent = "Must be in valid format"
     }else {
