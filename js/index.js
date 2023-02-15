@@ -147,7 +147,9 @@ form.addEventListener('submit', (e) => {
     if(inputs[index].value === '') {
        return document.getElementById('submit-danger').textContent = 'Please fill out required entries'
      } 
-   
+     if (cardDanger.textContent !== '' || nameDanger.textContent !== '' || expDanger.textContent !== '') {
+       return  document.getElementById('submit-danger').textContent = 'Something went wrong'
+     }
     }  
         document.getElementById('submit-danger').textContent = ''
         playSound()
