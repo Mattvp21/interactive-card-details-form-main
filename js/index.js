@@ -147,10 +147,8 @@ form.addEventListener('submit', (e) => {
     if(inputs[index].value === '') {
        return document.getElementById('submit-danger').textContent = 'Please fill out required entries'
      } 
-     if (cardDanger.textContent !== '' || nameDanger.textContent !== '' || expDanger.textContent !== '') {
-       return  document.getElementById('submit-danger').textContent = 'Something went wrong'
-     }
-    else {
+   
+    }  
         document.getElementById('submit-danger').textContent = ''
         playSound()
         setTimeout(() => {
@@ -162,8 +160,8 @@ form.addEventListener('submit', (e) => {
             thankYou.style.animation = 'slideInLeft 1s ease-in'
         }, 1000);
         
-   }
-}
+   
+
 })
 
 function playSound() {
