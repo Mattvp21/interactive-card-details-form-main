@@ -33,13 +33,13 @@ function checkCardType(value) {
         cardNumberInput.style.backgroundRepeat = 'no-repeat'
         cardNumberInput.style.backgroundPosition = '95%'
     } else if (value[0] == 5) {
-        logo.setAttribute('src', '/images/mastercard.gif')
+        logo.setAttribute('src', 'images/mastercard.gif')
         logo.hidden = false
         cardNumberInput.style.background = 'url(./images/mastercard.gif)'
         cardNumberInput.style.backgroundRepeat = 'no-repeat'
         cardNumberInput.style.backgroundPosition = '95%'
     } else if (value[0] == 6) {
-        logo.setAttribute('src', '/images/discover.gif')
+        logo.setAttribute('src', 'images/discover.gif')
         logo.hidden = false
         cardNumberInput.style.background = 'url(./images/discover.gif)'
         cardNumberInput.style.backgroundRepeat = 'no-repeat'
