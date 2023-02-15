@@ -20,6 +20,35 @@ const frontCard = document.getElementById('front-card')
 const validate = document.getElementById('validate')
 const thankYou = document.getElementById('thank-you')
 
+const logo = document.querySelector('.logo')
+logo.hidden = true
+
+function checkCardType(value) {
+    if (value[0] == 4) {
+        logo.setAttribute('src', '/images/visa.gif')
+        logo.hidden = false
+        cardNumberInput.style.background = 'url(../images/visa.gif)'
+        cardNumberInput.style.backgroundRepeat = 'no-repeat'
+        cardNumberInput.style.backgroundPosition = '95%'
+    } else if (value[0] == 5) {
+        logo.setAttribute('src', '/images/mastercard.gif')
+        logo.hidden = false
+        cardNumberInput.style.background = 'url(../images/mastercard.gif)'
+        cardNumberInput.style.backgroundRepeat = 'no-repeat'
+        cardNumberInput.style.backgroundPosition = '95%'
+    } else if (value[0] == 6) {
+        logo.setAttribute('src', '/images/discover.gif')
+        logo.hidden = false
+        cardNumberInput.style.background = 'url(../images/discover.gif)'
+        cardNumberInput.style.backgroundRepeat = 'no-repeat'
+        cardNumberInput.style.backgroundPosition = '95%'
+    } else {
+        logo.hidden = true
+        cardNumberInput.style.background = 'none'
+        return;
+    }
+}
+
 
 //Handle card number
 cardNumberInput.addEventListener('input', (e) => {
@@ -38,9 +67,8 @@ cardNumberInput.addEventListener('input', (e) => {
         cardNumberInput.style.outlineColor = 'green'
         cardDanger.textContent = ""
     }
-
+    checkCardType(cardNumberInput.value )
     cardNumber.textContent = cardNumberInput.value || '0000 0000 0000 0000'
-    
 })
 
 //Handle name
@@ -56,14 +84,18 @@ fullNameInput.addEventListener('input', (e) => {
 })
 
 //Handle mm
+
 monthInput.addEventListener('input', (e) => {
     if(monthInput.value === '') {
         monthInput.style.outlineColor = 'red'
         expDanger.textContent = "Cannot be empty"
-    } else if(monthInput.value > 12) {
+    } 
+    else if(monthInput.value > 12) {
         monthInput.style.outlineColor = 'red'
         expDanger.textContent = "Must be a valid month"
-    }  else {
+    } 
+    else {
+            
             monthInput.style.outlineColor = 'green'
             expDanger.textContent = ""
         }
@@ -76,12 +108,14 @@ yearInput.addEventListener('input', (e) => {
     if(yearInput.value === '') {
         yearInput.style.outlineColor = 'red'
         expDanger.textContent = "Cannot be empty"
-    } else if(yearInput.value < 23) {
+    } 
+    else if(yearInput.value < 23) {
         yearInput.style.outlineColor = 'red'
         expDanger.textContent = "Must be a past the expiration year"
-    }  else {
-            yearInput.style.outlineColor = 'green'
-            expDanger.textContent = ""
+    }  
+    else {
+        yearInput.style.outlineColor = 'green'
+        expDanger.textContent = ""
         }
     yy.textContent = e.target.value.toUpperCase() || 'YY'
 })
@@ -91,10 +125,12 @@ cvcInput.addEventListener('input', (e) => {
     if(cvcInput.value === '') {
         cvcInput.style.outlineColor = 'red'
         expDanger.textContent = "Cannot be empty"
-    } else if (cvcInput.value.length < 2) {
+    } 
+    else if (cvcInput.value.length < 2) {
         cvcInput.style.outlineColor = 'red'
         expDanger.textContent = "Not a valid cvc"
-    } else {
+    } 
+    else {
         cvcInput.style.outlineColor = 'green'
         expDanger.textContent = ""
     }
@@ -105,8 +141,6 @@ cvcInput.addEventListener('input', (e) => {
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-   
-
    for (let index = 0; index < inputs.length; index++) {
     if(inputs[index].value === '') {
        return document.getElementById('submit-danger').textContent = 'Please fill out required entries'
@@ -134,3 +168,4 @@ function playSound() {
     const audio = new Audio('sounds/ding-sound-effect_2.mp3');
 audio.play();
 }
+
