@@ -55,13 +55,13 @@
             <img src="images/icon-complete.svg" alt="card-logo">
             <h2>THANK YOU!</h2>
             <p>We've added your card details</p>
-            <a href="https://mvpportfolio.netlify.app"><button >Continue</button></a>
+            <button ><a href="https://mvpportfolio.netlify.app">Continue</a></button>
           </div>
-          <form action="" id="form">
-            <label for="name">CARDHOLDER NAME</label>
+          <form id="form">
+            <label for="full-name-input">CARDHOLDER NAME</label>
             <input id="full-name-input" name="name" type="text" placeholder="e.g. Jane Appleseed" >
             <p id="name-danger"></p>
-            <label for="cardNumber">CARD NUMBER</label>
+            <label for="card-number-input">CARD NUMBER</label>
             <input  oninput="this.value = this.value.replace(/[^0-9. ' ']/g, '').replace(/(\..*)\./g, '$1');" maxlength="19"  id="card-number-input" name="cardNumber" type="text" placeholder="e.g. 1234 5678 9123 0000" >
             <p id="card-danger"></p>
             <div class="form-exp">

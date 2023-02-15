@@ -64,7 +64,7 @@ body {
     top: -2.5rem;
     z-index: 1;
    padding: 1rem;
-   
+  
 }
 
 .circle-box {
@@ -216,6 +216,13 @@ button {
     font-family: inherit;
     font-size: 1rem;
     cursor: pointer;
+    border: none;
+    box-shadow: 0px 0px 2px 2px;
+}
+
+a {
+    color: var(--lightGrayishViolet);
+    text-decoration: none;
 }
 
 .form-exp {
