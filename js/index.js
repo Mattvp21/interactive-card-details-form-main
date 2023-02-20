@@ -51,6 +51,18 @@ function checkCardType(value) {
     }
 }
 
+const formatNumber = (number) => number.split("").reduce((start, next, index) => {
+    if (index !== 0 && !(index % 4)) {
+        start += " ";
+    }
+    return start + next;
+}, "");
+
+cardNumberInput.addEventListener('keyup', (e) => {
+    cardNumberInput.value = formatNumber(cardNumber.value.replaceAll(" ", ""));
+    ccNumberDisplay.textContent = e.target.value;
+})
+
 
 //Handle card number
 cardNumberInput.addEventListener('input', (e) => {
@@ -59,8 +71,10 @@ cardNumberInput.addEventListener('input', (e) => {
         cardDanger.textContent = "Cannot be empty"
     } 
     else if(cardNumberInput.value.length < '19') {
+        
         cardNumberInput.style.outlineColor = 'red'
         cardDanger.textContent = "Must be a valid card"
+        cardNumberInput.value = formatNumber(cardNumberInput.value.replaceAll(" ", ""));
     }
      else if(!cardNumberInput.value.includes(' ')) {
         cardNumberInput.style.outlineColor = 'red'
@@ -72,6 +86,8 @@ cardNumberInput.addEventListener('input', (e) => {
     checkCardType(cardNumberInput.value )
     cardNumber.textContent = cardNumberInput.value || '0000 0000 0000 0000'
 })
+
+
 
 //Handle name
 fullNameInput.addEventListener('input', (e) => {
