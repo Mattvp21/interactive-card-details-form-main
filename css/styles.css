@@ -221,7 +221,17 @@ button {
 }
 
 a {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: hsl(278, 93%, 17%);
     color: var(--lightGrayishViolet);
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 0px 2px 2px;
     text-decoration: none;
 }
 
@@ -267,7 +277,7 @@ a {
    animation: slideInLeft .5s ease-in;
 }
 
-#thank-you p, h2 {
+#thank-you p, h1 {
     margin-top: 1rem;
 
 }
